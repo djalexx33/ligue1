@@ -27,4 +27,15 @@ module Ligue1
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+  FootballData.configure do |config|
+    # get api key at 'http://api.football-data.org/register'
+    config.api_key = '6f38ecfa4fc64808badff82fcd366b9d'
+
+    # default api version is 'alpha' if not setted
+    config.api_version = 'alpha'
+
+    # the default control method is 'full' if not setted
+    # see request section on 'http://api.football-data.org/documentation'
+    config.response_control = 'minified'
+end
 end
