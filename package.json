@@ -1,5 +1,7 @@
 {
   "name": "ligue1",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "footballdata-api-v2": "^2.3.0"
+  }
 }

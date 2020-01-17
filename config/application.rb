@@ -29,7 +29,7 @@ module Ligue1
   end
   FootballData.configure do |config|
     # get api key at 'http://api.football-data.org/register'
-    config.api_key = '6f38ecfa4fc64808badff82fcd366b9d'
+    config.api_key = ENV['X-AUTH-TOKEN']
 
     # default api version is 'alpha' if not setted
     config.api_version = 'alpha'
