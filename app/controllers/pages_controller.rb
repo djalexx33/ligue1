@@ -16,10 +16,5 @@ class PagesController < ApplicationController
     response = RestClient.get(url, headers = header)
     matches = JSON.parse(response)
     @matches = matches
-
-    url2 = "http://api.football-data.org/v2/competitions/FL1/teams"
-    response2 = RestClient.get(url2, headers = header)
-    teams = JSON.parse(response2)
-    @teams = teams
   end
 end
