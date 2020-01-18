@@ -1,8 +1,16 @@
-<div> <%= @matches["matches"][0]["utcDate"] %> </div>
-<%= @matches["matches"][0]["homeTeam"]["name"] %>
-<%= @matches["matches"][0]["score"]["fullTime"]["homeTeam"] %>
-<%= @matches["matches"][0]["score"]["fullTime"]["awayTeam"] %>
-<%= @matches["matches"][0]["awayTeam"]["name"] %>
-
-
-
+<div class="text-center">
+  <h1>La Ligue 1 Conforama</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-1 text-center">
+      <% @matches["matches"].each do |element| %>
+      <div class="my-3 card">
+        <p class="mt-2"><strong><%= element["utcDate"].to_date.strftime("%a. %d.%m.%y") %> </strong></p>
+          <p>
+            <%= element["homeTeam"]["name"] %> <%= element["score"]["fullTime"]["homeTeam"] %> - <%= element["score"]["fullTime"]["awayTeam"] %> <%= element["awayTeam"]["name"] %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

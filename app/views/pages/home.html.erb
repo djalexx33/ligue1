@@ -1,15 +1,39 @@
-<% @standings["standings"][0]["table"].each do |element| %>
-  <div>
-    <%= element["position"] %>
-    <%= image_tag element["team"]["crestUrl"], width: 30 %>
-    <%= link_to element["team"]["name"], index_path %>
-    <%= element["points"] %>
-    <%= element["playedGames"] %>
-    <%= element["won"] %>
-    <%= element["draw"] %>
-    <%= element["lost"] %>
-    <%= element["goalsFor"] %>
-    <%= element["goalsAgainst"] %>
-    <%= element["goalsDifference"] %>
-  </div>
-<% end %>
+<div class="text-center">
+  <h1>La Ligue 1 Conforama</h1>
+</div>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Pos</th>
+        <th scope="col"></th>
+        <th scope="col">Equipe</th>
+        <th scope="col">Pts.</th>
+        <th scope="col">J.</th>
+        <th scope="col">G.</th>
+        <th scope="col">N.</th>
+        <th scope="col">P.</th>
+        <th scope="col">BP.</th>
+        <th scope="col">BC.</th>
+        <th scope="col">Diff.</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @standings["standings"][0]["table"].each do |element| %>
+      <tr>
+        <th scope="row"><%= element["position"] %></th>
+        <td><%= image_tag element["team"]["crestUrl"], width: 30 %></td>
+        <td><%= link_to element["team"]["name"], index_path(query: element["team"]["id"]) %></td>
+        <td><%= element["points"] %></td>
+        <td><%= element["playedGames"] %></td>
+        <td><%= element["won"] %></td>
+        <td><%= element["draw"] %></td>
+        <td><%= element["lost"] %></td>
+        <td><%= element["goalsFor"] %></td>
+        <td><%= element["goalsAgainst"] %></td>
+        <td><%= element["goalDifference"] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
