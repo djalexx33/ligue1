@@ -14,19 +14,19 @@
  *= require_self
  */
 @media screen and (max-width: 64em) {
- body {
-      font-size: 1em;
-   }
+  body {
+    font-size: 1em;
+  }
 }
 
 @media screen and (max-width: 50em) {
- body {
-       font-size: 1.3em;
-   }
+  body {
+  font-size: 1.5em;
+  }
 }
 
 @media screen and (max-width: 30em) {
-   body {
-        font-size: 1.5em;
+  body {
+  font-size: 1.5em;
   }
 }
