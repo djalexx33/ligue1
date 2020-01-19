@@ -8,8 +8,7 @@
       <div class="my-6 card">
         <p class="mt-3"><strong><%= element["utcDate"].to_date.strftime("%a. %d.%m.%y") %> </strong></p>
           <p>
-            <%= element["homeTeam"]["name"] %> <%= element["score"]["fullTime"]["homeTeam"] %> - <%= element["score"]["fullTime"]["awayTeam"] %> <%= element["awayTeam"]["name"] %></p>
-        </div>
+            <%= element["homeTeam"]["name"] %> <%= element["score"]["fullTime"]["homeTeam"] %> - <%= element["score"]["fullTime"]["awayTeam"] %> <%= element["awayTeam"]["name"] %></p>        </div>
       <% end %>
     </div>
   </div>
