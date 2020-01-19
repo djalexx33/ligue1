@@ -1,8 +1,7 @@
 <div class="text-center">
   <h1>La Ligue 1 Conforama</h1>
 </div>
-<div class="container">
-  <table class="table">
+  <table class="table mt-4">
     <thead>
       <tr>
         <th scope="col">Pos</th>
@@ -24,7 +23,7 @@
         <th scope="row"><%= element["position"] %></th>
         <td><%= image_tag element["team"]["crestUrl"], width: 30 %></td>
         <td><%= link_to element["team"]["name"], index_path(query: element["team"]["id"]) %></td>
-        <td><%= element["points"] %></td>
+        <td><strong><%= element["points"] %></strong></td>
         <td><%= element["playedGames"] %></td>
         <td><%= element["won"] %></td>
         <td><%= element["draw"] %></td>
@@ -36,4 +35,3 @@
     <% end %>
     </tbody>
   </table>
-</div>
