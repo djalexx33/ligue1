@@ -13,14 +13,3 @@
  *= require_tree .
  *= require_self
  */
-@media(max-width: 992px) {
-  body {
-    font-size: 1em;
-  }
-}
-
-@media(max-width: 768px) {
-  body {
-    font-size: 1.5rem;
-  }
-}
