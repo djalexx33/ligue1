@@ -19,7 +19,7 @@
       </tr>
     </thead>
     <tbody>
-    <% @standings["standings"][0]["table"].each do |element| %>
+    <% @standings[0]["table"].each do |element| %>
       <tr>
         <th scope="row"><%= element["position"] %></th>
         <td><%= image_tag element["team"]["crestUrl"], width: 30 %></td>
