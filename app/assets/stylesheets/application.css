@@ -14,5 +14,6 @@
  *= require_self
  */
 body {
+  font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
 }
