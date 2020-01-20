@@ -14,10 +14,9 @@
       <tr>
         <th scope="row"><%= element["utcDate"].to_date.strftime("%a. %d.%m.%y") %></th>
         <td>
-          <% if @teams.each { |i| i["id"] } == @matches.each { |element| element["homeTeam"]["id"] } %>
-            <%= image_tag @teams[0]["crestUrl"], width: 30 %>
-          <% else %>
-            <%= image_tag @teams[1]["crestUrl"], width: 30 %>
+          <% @logo = @teams.find { |team| team["id"] == element["homeTeam"]["id"] } %>
+          <% if !@logo.nil? %>
+            <%= image_tag @logo["crestUrl"], width: 30 %>
           <% end %>
           <% if element["homeTeam"]["id"] == params["query"].to_i %>
             <strong><%= element["homeTeam"]["name"] %><strong>
@@ -27,21 +26,18 @@
         </td>
         <td><%= element["score"]["fullTime"]["homeTeam"] %> - <%= element["score"]["fullTime"]["awayTeam"] %></td>
         <td>
-          <% if @teams.each { |i| i["id"] } == @matches.each { |element| element["homeTeam"]["id"] } %>
-            <%= image_tag @teams[0]["crestUrl"], width: 30 %>
-          <% else %>
-            <%= image_tag @teams[1]["crestUrl"], width: 30 %>
-          <% end %>
           <% if element["awayTeam"]["id"] == params["query"].to_i %>
             <strong><%= element["awayTeam"]["name"] %></strong>
           <% else %>
             <%= element["awayTeam"]["name"] %>
           <% end  %>
+          <% @logo = @teams.find { |team| team["id"] == element["awayTeam"]["id"] } %>
+          <% if !@logo.nil? %>
+            <%= image_tag @logo["crestUrl"], width: 30 %>
+          <% end %>
         </td>
       </tr>
     <% end %>
     </tbody>
   </table>
 </div>
-
-
