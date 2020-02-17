@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   end
 
   def index
-    url = "http://api.football-data.org/v2/teams/#{params["query"]}/matches"
+    url = "http://api.football-data.org/v2/teams/#{params['query']}/matches"
     header = { 'X-Auth-Token': ENV['API_TOKEN'] }
     response = RestClient.get(url, headers = header)
     matches = JSON.parse(response)
